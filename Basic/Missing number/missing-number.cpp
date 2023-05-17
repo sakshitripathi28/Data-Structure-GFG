@@ -26,12 +26,25 @@ int main()
 int missingNumber(int A[], int N)
 {
     // Your code goes here
-    int sum = (N * (N+1))/2 ;
+    //tc O(N) sc O(1)
+    // int sum = (N * (N+1))/2 ;
     
-    for(int i =0 ;i<N-1;i++)
+    // for(int i =0 ;i<N-1;i++)
+    // {
+    //     sum -= A[i];
+    // }
+    
+    // return sum;
+    
+    
+    int xor1 =0,xor2 =0;
+    for(int i=0;i<N-1;i++)
     {
-        sum -= A[i];
+        xor1 = xor1^(i+1);
+        xor2 = xor2^A[i];
     }
     
-    return sum;
+    xor1 = xor1 ^ N;
+    
+    return xor1^xor2;
 }
