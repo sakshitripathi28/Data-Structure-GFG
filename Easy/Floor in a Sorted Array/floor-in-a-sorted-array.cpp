@@ -14,7 +14,7 @@ class Solution{
         // Your code here
         
     int low = 0,high = n-1;
-        int num = -1;
+    int num = -1;
         
         while(low <= high)
         {
