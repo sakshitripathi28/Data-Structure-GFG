@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
-    void solve(int i,int k,int n,int sum,vector<int> output,vector<vector<int>> &ans)
+    void solve(int i,int k,int n,int sum,vector<int> &output,vector<vector<int>> &ans)
     {
         if(k == 0)
         {
@@ -26,9 +26,9 @@ class Solution {
         output.pop_back();
         
         solve(i+1,k,n,sum,output,ans);
-        
     }
-    vector<vector<int>> combinationSum(int K, int N) {
+  
+    vector<vector<int>> combinationSum(int k, int n) {
         // code here
         
         vector<vector<int>> ans;
@@ -37,7 +37,7 @@ class Solution {
         int i = 1;
         int sum = 0;
 
-        solve(i,K,N,sum,output,ans);
+        solve(i,k,n,sum,output,ans);
 
         return ans;
     }
