@@ -15,68 +15,40 @@ class Solution{
     // size: size of input array
     int majorityElement(int a[], int size)
     {
-        //moore's voting algoritm
-        //tc = O(N) sc = O(1)
-        int cnt = 0;
-        int ele;
+        
+        // your code here
+        int count =0;
+        int ele =0;
         
         for(int i=0;i<size;i++)
         {
-            if(cnt == 0)
+            if(count == 0)
             {
-                cnt = 1;
+                count = 1;
                 ele = a[i];
+            }
+            else if(ele == a[i])
+            {
+                count++;
             }
             else
             {
-                if(a[i] == ele)
-                    cnt++;
-                else
-                    cnt--;
+                count--;
             }
         }
-        
-        int maxi=0;
+        count = 0;
         for(int i=0;i<size;i++)
         {
             if(a[i] == ele)
-                maxi++;
+            count++;
         }
         
-        if(maxi > (size/2))
+        if(count > size/2)
+        {
             return ele;
-        else
-            return -1;
+        }
         
-        
-        
-        
-        
-        
-        
-        
-        // tc = o(n) ,sc = o(n) array contain all unique element
-        // unordered_map<int,int> un;
-        
-        // for(int i=0;i<size;i++)
-        // {
-        //     un[a[i]]++;
-        // }
-        
-        // int maxi = 0;
-        // for(auto x: un)
-        // {
-        //     if(x.second > maxi)
-        //     {
-        //         maxi = max(maxi,x.second);
-        //     }
-        // }
-        
-        // if(maxi >= (size/2))
-        //     return maxi;
-        // else
-        //     return -1;
-        
+        return -1;
         
     }
 };
