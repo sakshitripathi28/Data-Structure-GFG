@@ -8,65 +8,24 @@ using namespace std;
 //User function template for C++
 class Solution{
 public:	
-// 	bool palindrome(string S,int i)
-// 	{
-// 	    if(i >= S.length()/2)
-// 	        return true;
-	        
-// 	   if(S[i] != S[S.length()-i-1])
-// 	   {
-// 	       return false;
-// 	   }
-	   
-// 	   return palindrome(S,i+1);
-// 	}
 	
-	int isPalindrome(string s)
+	
+	int isPalindrome(string S)
 	{
-	    
 	    // Your code goes here
-	   int i=0;
-       int j=s.size()-1;
-       
-       while(i<j)
-       {
-          
-          if(s[i]!=s[j])
-          {
-              return 0;
-          }
-          
-          i++;
-          j--;
+	    int i=0;
+	    int j = S.size()-1;
 	    
-       }
-	   // if(S.length() == 1)
-	   // {
-	   //     return 1;
-	   // }
+	    while(i<j)
+	    {
+	        if(S[i] != S[j])
+	            return 0;
+	            
+	       i++;
+	       j--;
+	    }
 	    
-	   // int i=0;
-	    
-	   // if(palindrome(S,i))
-	   // {
-	   //     return 1;
-	   // }
-	   // else
-	   //     return 0;
-	    
-	   //if(S.length() <= 1)
-	   //     return 1;
-	        
-	   //if(S[0] == S[S.length()-1])
-	   //{
-	   
-	   //    return isPalindrome(S.substr(1,S.length()-2));
-	   //}
-	   //else
-	   // return 0;
-	   
-	   
-	  return 1;  
+	    return 1;
 	}
 
 };
