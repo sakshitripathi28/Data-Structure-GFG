@@ -66,6 +66,8 @@ class Solution
             }
             else{
                 temp->data= 2;
+                twoCount--;
+                
             }
             temp= temp->next;
         }
