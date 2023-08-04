@@ -10,7 +10,7 @@ using namespace std;
 
 class Solution{
 public:
-    void insert_at_bottom(stack<int> &St,int x)
+    void insert_at_pos(stack<int> &St,int x)
     {
         if(St.size() == 0)
         {
@@ -18,21 +18,25 @@ public:
         }
         else
         {
-            int a = St.top();
+            int y = St.top();
             St.pop();
-            insert_at_bottom(St,x);
-            St.push(a);
+            insert_at_pos(St,x);
+            
+            St.push(y);
         }
+        
+        
     }
     void Reverse(stack<int> &St){
-         if(St.size() > 0)
-         {
-             int x = St.top();
-             St.pop();
-             Reverse(St);
-             
-             insert_at_bottom(St,x);
-         }
+        if(St.size())
+        {
+            int x = St.top();
+            St.pop();
+            
+            Reverse(St);
+            
+            insert_at_pos(St,x);
+        }
     }
 };
 
